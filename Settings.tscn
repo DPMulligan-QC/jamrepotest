@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://80kexekbvu1r"]
+
+[ext_resource type="Script" uid="uid://c18o3vdyisko1" path="res://settings.gd" id="1_bvb5x"]
+
+[sub_resource type="Theme" id="Theme_bvb5x"]
+
+[sub_resource type="Theme" id="Theme_2fv1l"]
+
+[sub_resource type="Theme" id="Theme_mx4kw"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bvb5x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FullscreenButton" type="CheckButton" parent="."]
+layout_mode = 2
+offset_left = 448.0
+offset_top = 292.0
+offset_right = 704.0
+offset_bottom = 356.0
+theme = SubResource("Theme_bvb5x")
+theme_override_font_sizes/font_size = 20
+text = "FULLSCREEN"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 21.0
+offset_right = 160.0
+offset_bottom = 69.0
+theme = SubResource("Theme_2fv1l")
+text = "BACK"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 32.0
+offset_right = 704.0
+offset_bottom = 71.0
+theme = SubResource("Theme_mx4kw")
+theme_type_variation = &"HeaderLarge"
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
