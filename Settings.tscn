@@ -1,6 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://80kexekbvu1r"]
+[gd_scene load_steps=8 format=3 uid="uid://80kexekbvu1r"]
 
 [ext_resource type="Script" uid="uid://c18o3vdyisko1" path="res://settings.gd" id="1_bvb5x"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bvb5x"]
+
+[sub_resource type="Theme" id="Theme_37a8j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfvul"]
+bg_color = Color(0.252028, 0.252028, 0.252028, 1)
 
 [sub_resource type="Theme" id="Theme_bvb5x"]
 
@@ -17,6 +24,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bvb5x")
 
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("CanvasItemMaterial_bvb5x")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_37a8j")
+theme_override_styles/panel = SubResource("StyleBoxFlat_sfvul")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
@@ -30,14 +48,31 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -128.0
-offset_top = -412.0
+offset_top = -348.0
 offset_right = 128.0
-offset_bottom = -348.0
+offset_bottom = -284.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_bvb5x")
 theme_override_font_sizes/font_size = 20
 text = "FULLSCREEN"
+
+[node name="VsyncButton" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -284.0
+offset_right = 128.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bvb5x")
+theme_override_font_sizes/font_size = 20
+text = "VSYNC"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -53,11 +88,11 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -128.0
+offset_left = -256.0
 offset_top = 64.0
-offset_right = 128.0
 offset_bottom = 112.0
 grow_horizontal = 2
+scale = Vector2(2, 2)
 theme = SubResource("Theme_mx4kw")
 theme_type_variation = &"HeaderLarge"
 text = "SETTINGS"
@@ -149,9 +184,38 @@ text = "MUSIC
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ResolutionOptionButton" type="OptionButton" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -376.0
+offset_right = 124.0
+offset_bottom = -328.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ResolutionOptionButtonLabel" type="Label" parent="ResolutionOptionButton"]
+offset_top = -50.7
+offset_right = 256.0
+offset_bottom = 8.3
+theme = SubResource("Theme_mx4kw")
+theme_type_variation = &"HeaderSmall"
+text = "SCREEN RESOLUTION
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="toggled" from="VsyncButton" to="." method="_on_vsync_button_toggled"]
+[connection signal="toggled" from="VsyncButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="MasterVolume" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="SFXVolume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="value_changed" from="MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="item_selected" from="ResolutionOptionButton" to="." method="_on_resolution_option_button_item_selected"]

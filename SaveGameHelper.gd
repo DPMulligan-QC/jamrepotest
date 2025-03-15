@@ -19,3 +19,5 @@ func load_game():
 	else:
 		print("Error loading game")
 		return null
+		
+		

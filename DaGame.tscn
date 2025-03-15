@@ -1,5 +1,20 @@
-[gd_scene format=3 uid="uid://cr66inf3ogny8"]
+[gd_scene load_steps=5 format=3 uid="uid://cr66inf3ogny8"]
+
+[ext_resource type="Script" uid="uid://1vkps7kxs8xc" path="res://GameScene.gd" id="1_tmsic"]
+[ext_resource type="Script" uid="uid://dd36b2qs6drd0" path="res://playerCharacterTestBody.gd" id="2_78nep"]
+[ext_resource type="Texture2D" uid="uid://c38pheh7f1l3i" path="res://icon.svg" id="3_5yir7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu7hj"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_tmsic")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_78nep")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("3_5yir7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_qu7hj")
