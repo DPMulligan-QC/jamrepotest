@@ -28,6 +28,9 @@ func ready() -> void:
 			get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
 		else:
 			get_window().mode = Window.MODE_WINDOWED
+		AudioServer.set_bus_volume_linear(0, linear_to_db(data.volumeScaleMaster))
+		AudioServer.set_bus_volume_linear(1, linear_to_db(data.volumeScaleSFX))
+		AudioServer.set_bus_volume_linear(2, linear_to_db(data.volumeScaleMusic))
 	else:
 		data = SaveData.new()
 		helper.save_game(data)
