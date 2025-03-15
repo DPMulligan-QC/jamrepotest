@@ -53,5 +53,6 @@ text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
