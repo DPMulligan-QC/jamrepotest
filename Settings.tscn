@@ -30,24 +30,51 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -128.0
+<<<<<<< Updated upstream
 offset_top = -412.0
 offset_right = 128.0
 offset_bottom = -348.0
+=======
+offset_top = -296.0
+offset_right = 128.0
+offset_bottom = -232.0
+>>>>>>> Stashed changes
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_bvb5x")
 theme_override_font_sizes/font_size = 20
 text = "FULLSCREEN"
 
+<<<<<<< Updated upstream
+=======
+[node name="VsyncButton" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -232.0
+offset_right = 128.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bvb5x")
+theme_override_font_sizes/font_size = 20
+text = "VSYNC"
+
+>>>>>>> Stashed changes
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 192.0
-offset_bottom = 112.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 288.0
+offset_bottom = 80.0
 theme = SubResource("Theme_2fv1l")
 text = "BACK"
 
+<<<<<<< Updated upstream
 [node name="SettingsLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -64,6 +91,8 @@ text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+=======
+>>>>>>> Stashed changes
 [node name="MasterVolume" type="HSlider" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -71,10 +100,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = -156.0
-offset_right = 124.0
-offset_bottom = -124.0
+offset_left = -128.0
+offset_top = -104.0
+offset_right = 128.0
+offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 2
 max_value = 1.0
@@ -100,9 +129,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -132.0
-offset_top = -60.0
+offset_top = -8.0
 offset_right = 124.0
-offset_bottom = -28.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 max_value = 1.0
@@ -128,9 +157,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -132.0
-offset_top = 36.0
+offset_top = 88.0
 offset_right = 124.0
-offset_bottom = 68.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 max_value = 1.0
@@ -149,8 +178,42 @@ text = "MUSIC
 horizontal_alignment = 1
 vertical_alignment = 1
 
+<<<<<<< Updated upstream
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
+=======
+[node name="ResolutionOptionButton" type="OptionButton" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -240.0
+offset_right = 124.0
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ResolutionOptionButtonLabel" type="Label" parent="ResolutionOptionButton"]
+layout_mode = 0
+offset_top = -50.7
+offset_right = 256.0
+offset_bottom = 8.3
+theme = SubResource("Theme_mx4kw")
+theme_type_variation = &"HeaderSmall"
+text = "SCREEN RESOLUTION
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="toggled" from="VsyncButton" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="toggled" from="VsyncButton" to="." method="_on_vsync_button_toggled"]
+>>>>>>> Stashed changes
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="MasterVolume" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="SFXVolume" to="." method="_on_sfx_volume_value_changed"]

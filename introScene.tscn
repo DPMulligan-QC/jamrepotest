@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdqasj06gotyq"]
+
+[ext_resource type="Script" uid="uid://dlwarfiknglwu" path="res://intro_scene.gd" id="1_y564o"]
+
+[sub_resource type="Theme" id="Theme_a23hc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y564o"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a23hc")
+script = ExtResource("1_y564o")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y564o")

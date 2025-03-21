@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://biaa5eulbjhtg"]
+
+[ext_resource type="Script" uid="uid://cib7dikfxof3" path="res://fly_catching.gd" id="1_7ux6i"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7ux6i")

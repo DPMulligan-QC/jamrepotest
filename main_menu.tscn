@@ -1,17 +1,42 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://dnqot444thbxf"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://dnqot444thbxf"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://dh5u5arar1c3n" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="AudioStream" uid="uid://d1muu425233py" path="res://assets/sounds/sfx/UI/UI_FrogSound.mp3" id="2_7vrkn"]
 
 [sub_resource type="Theme" id="Theme_06t4h"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_06t4h")
 
+<<<<<<< Updated upstream
+=======
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7vrkn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_fu7sn")
+
+[node name="player" type="AudioStreamPlayer" parent="Panel"]
+stream = ExtResource("2_7vrkn")
+mix_target = 2
+max_polyphony = 10
+bus = &"SFX"
+
+>>>>>>> Stashed changes
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -39,7 +64,11 @@ text = "SETTINGS"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "QUIT"
+text = "CREDITS"
+
+[node name="funnybutton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MOVIE TEST"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -53,11 +82,13 @@ offset_bottom = 103.0
 grow_horizontal = 2
 theme = SubResource("Theme_06t4h")
 theme_type_variation = &"HeaderLarge"
-text = "REPO TEST"
+text = "FROG FINDER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="finished" from="Panel/player" to="." method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/funnybutton" to="." method="_on_funnybutton_pressed"]
 [connection signal="ready" from="Label" to="." method="_on_label_ready"]
