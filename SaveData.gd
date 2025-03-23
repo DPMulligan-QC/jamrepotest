@@ -1,13 +1,6 @@
 extends Resource
 class_name SaveData
 
-<<<<<<< Updated upstream
-@export var isFullscreen : bool = false
-@export var screenResolution : Vector2 = Vector2(1920.0,1080.0)
-@export var volumeScaleMaster : float = 1.0   #scales from 0.0 to 1.0
-@export var volumeScaleMusic : float = 1.0
-@export var volumeScaleSFX : float = 1.0
-=======
 @export var resolutionsList = {
 	"2560 x 1440": Vector2i(2560,1440),
 	"1920 x 1080": Vector2i(1920,1080),
@@ -29,4 +22,8 @@ class_name SaveData
 @export var flies: int = 10
 @export var timeOfDay = 3
 @export var dayNumber = 0
->>>>>>> Stashed changes
+
+#frog data
+
+@export var frog_names = ["Sassy Twink", "Laid-back", "Cowboy"]
+@export var frog_affinity = [20, 25, 15]

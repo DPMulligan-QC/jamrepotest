@@ -1,13 +1,8 @@
 extends Control
 
-<<<<<<< Updated upstream
-var data = SaveData.new()
-var helper = SaveGameHelper.new()
-=======
 @onready var sfxPlayer: AudioStreamPlayer = $Panel/player
 var movie: MoviePlayer
 var isFadingToPlay: bool = false
->>>>>>> Stashed changes
 
 func _on_play_button_pressed() -> void:
 	if(!isFadingToPlay):
@@ -43,20 +38,6 @@ func enable_buttons(enabled : bool = true):
 	$MarginContainer/VBoxContainer/funnybutton.disabled = !enabled
 
 func ready() -> void:
-<<<<<<< Updated upstream
-	data= helper.load_game()
-	if data:
-		if(data.isFullscreen):
-			get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
-		else:
-			get_window().mode = Window.MODE_WINDOWED
-		AudioServer.set_bus_volume_linear(0, linear_to_db(data.volumeScaleMaster))
-		AudioServer.set_bus_volume_linear(1, linear_to_db(data.volumeScaleSFX))
-		AudioServer.set_bus_volume_linear(2, linear_to_db(data.volumeScaleMusic))
-	else:
-		data = SaveData.new()
-		helper.save_game(data)
-=======
 	GlobalManager.load_game(true)
 	isFadingToPlay = false
 
@@ -79,4 +60,3 @@ func _on_funnybutton_pressed() -> void:
 		$MarginContainer/VBoxContainer/funnybutton.disabled = true
 	else:
 		movie.queue_free()
->>>>>>> Stashed changes

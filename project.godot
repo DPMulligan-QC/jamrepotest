@@ -15,25 +15,23 @@ config/description="just testing some stuff out!"
 config/version="0.0.1"
 run/main_scene="uid://cdqasj06gotyq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://ddy2755k6urqq"
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalManager="*res://global_manager.gd"
+FrogData="*res://frog_data.gd"
 
 [display]
 
-<<<<<<< Updated upstream
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-=======
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
->>>>>>> Stashed changes
 
 [dotnet]
 

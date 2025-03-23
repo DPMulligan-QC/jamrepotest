@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bu67xdgi5gm0m"]
 
 [ext_resource type="Script" uid="uid://enyiabf1gtng" path="res://home.gd" id="1_hf3nf"]
-[ext_resource type="Texture2D" uid="uid://dvv25otgyv78a" path="res://assets/sprites/GUI/backgrounds/AssemblerBackground2.png" id="2_hf3nf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/GUI/backgrounds/AssemblerBackground2.png" id="2_hf3nf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_maaha"]
 texture = ExtResource("2_hf3nf")

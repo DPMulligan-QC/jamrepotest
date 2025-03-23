@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://mhftx0pvgnpr"]
+
+[ext_resource type="Script" uid="uid://c4583sohyul6n" path="res://dialogue_scene.gd" id="1_e8ele"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_txu2u"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8ele")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GayFrogSprite" type="Sprite2D" parent="AspectRatioContainer"]
+texture = SubResource("PlaceholderTexture2D_txu2u")

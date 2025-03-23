@@ -1,13 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://4yunhj0ofdlw"]
+[gd_scene load_steps=10 format=3 uid="uid://4yunhj0ofdlw"]
 
 [ext_resource type="Script" uid="uid://fu0uekd7ortw" path="res://the_swimming_hole.gd" id="1_hp3fw"]
 [ext_resource type="Texture2D" uid="uid://xx675ncqc64y" path="res://assets/sprites/backgrounds/bar-7682488_1280.png" id="2_s8jh8"]
+[ext_resource type="Theme" uid="uid://doxy1cjbx2ust" path="res://PinkTheme.tres" id="3_8e5rg"]
 [ext_resource type="AudioStream" uid="uid://qrvsioma41js" path="res://assets/sounds/ambience/431763__op_archive__tavern_interior_01.mp3" id="3_tx142"]
 [ext_resource type="AudioStream" uid="uid://dcatvrqk10w8f" path="res://assets/sounds/ambience/91442__aguasonic__sherman_frogs_01_04mar2010.mp3" id="4_3j62m"]
-[ext_resource type="PackedScene" uid="uid://nimh1bl6ma2t" path="res://HUDScene.tscn" id="5_3j62m"]
+[ext_resource type="Texture2D" uid="uid://b7t1rrf0tegln" path="res://assets/sprites/GUI/HUD/fly.png" id="4_yckek"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vgjg"]
 texture = ExtResource("2_s8jh8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0mb4"]
+texture = ExtResource("4_yckek")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywyav"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -132,6 +139,85 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "LEAVE"
 
+[node name="FlyEnergyCount" type="Panel" parent="Panel"]
+offset_right = 256.0
+offset_bottom = 96.0
+theme = ExtResource("3_8e5rg")
+
+[node name="FlySprite" type="Panel" parent="Panel/FlyEnergyCount"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -24.0
+offset_right = 80.0
+offset_bottom = 24.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_f0mb4")
+
+[node name="Label" type="Label" parent="Panel/FlyEnergyCount/FlySprite"]
+layout_mode = 1
+offset_left = 64.0
+offset_right = 176.0
+offset_bottom = 48.0
+theme_type_variation = &"HeaderMedium"
+text = ": 10"
+vertical_alignment = 1
+
+[node name="TimeDisplay" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_bottom = 96.0
+grow_horizontal = 0
+theme = ExtResource("3_8e5rg")
+
+[node name="TimeCount" type="Label" parent="Panel/TimeDisplay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderSmall"
+text = "DAY 0 - EVENING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Location" type="Label" parent="Panel/TimeDisplay"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -42.0
+offset_right = 105.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "[ The Swimming Hole ]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DividerPanel" type="Panel" parent="Panel/TimeDisplay"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ywyav")
+
 [node name="bar_ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_tx142")
 volume_db = -10.306
@@ -142,9 +228,6 @@ bus = &"Music"
 stream = ExtResource("4_3j62m")
 autoplay = true
 bus = &"Music"
-
-[node name="HUDCONTROL" parent="." instance=ExtResource("5_3j62m")]
-layout_mode = 1
 
 [connection signal="pressed" from="Panel/dartsButton" to="." method="_on_darts_button_pressed"]
 [connection signal="pressed" from="Panel/bullButton" to="." method="_on_bull_button_pressed"]

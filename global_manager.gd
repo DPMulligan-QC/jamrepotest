@@ -3,11 +3,17 @@ extends Control
 var data : SaveData
 const save_path := "user://savedata.tres"
 var is_in_game = false
+
 var sfxPlayer: AudioStreamPlayer
 var musicPlayer: AudioStreamPlayer
 
+enum LOCATION {BAR, POND, MALL, HOME, ASLEEP}
+
 enum TIME_OF_DAY {MORNING, MIDDAY, AFTERNOON, EVENING, NIGHT, DAWN}
 signal time_passed
+
+
+
 
 func center_da_window() -> void:
 	var screenCenter = DisplayServer.screen_get_position() + DisplayServer.screen_get_size()/2
@@ -92,6 +98,8 @@ func _ready() ->void:
 	#musicPlayer.bus = &"Music"
 	#sfxPlayer.bus = &"SFX"
 	load_game(true)
+	
+	FrogData.frog_map =  {data.frog_names[0]:0, data.frog_names[1]:1, data.frog_names[2]:2}
 	
 func load_scene(scenePath : String = "res://main_menu.tscn"):
 	match scenePath:

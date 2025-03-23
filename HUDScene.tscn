@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://doxy1cjbx2ust" path="res://PinkTheme.tres" id="1_kva55"]
 [ext_resource type="Texture2D" uid="uid://b7t1rrf0tegln" path="res://assets/sprites/GUI/HUD/fly.png" id="2_hl0vy"]
 [ext_resource type="Texture2D" uid="uid://bkmtx8ph2qrau" path="res://assets/sprites/GUI/HUD/arrow.png" id="3_o7pky"]
-[ext_resource type="Texture2D" uid="uid://dvv25otgyv78a" path="res://assets/sprites/GUI/backgrounds/AssemblerBackground2.png" id="5_o7pky"]
+[ext_resource type="Texture2D" path="res://assets/sprites/GUI/backgrounds/AssemblerBackground2.png" id="5_o7pky"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivsqa"]
 texture = ExtResource("2_hl0vy")

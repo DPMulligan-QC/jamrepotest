@@ -1,14 +1,6 @@
-<<<<<<< Updated upstream
-[gd_scene format=3 uid="uid://cr66inf3ogny8"]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-=======
 [gd_scene load_steps=2 format=3 uid="uid://cr66inf3ogny8"]
 
-[ext_resource type="Script" uid="uid://1vkps7kxs8xc" path="res://GameScene.gd" id="1_tmsic"]
+[ext_resource type="Script" uid="uid://beels2pmi781b" path="res://GameScene.gd" id="1_tmsic"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tmsic")
->>>>>>> Stashed changes

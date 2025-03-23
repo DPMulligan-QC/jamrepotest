@@ -1,8 +1,8 @@
 extends Control
 
 @onready var data : SaveData
-var hud
-var hud_scene
+#var hud
+#var hud_scene
 
 var movie : MoviePlayer
 
@@ -17,11 +17,11 @@ func time_passed():
 func _ready() -> void:
 	data =  GlobalManager.data
 	#hud_scene = load("res://HUDScene.tscn")
-	hud = $HUDCONTROL
-	hud.set_name("HUD")
+	#hud = $HUDCONTROL
+	#hud.set_name("HUD")
 	#get_tree().get_first_node_in_group().add_child(hud)
-	hud.phone_on.connect(disable_buttons)
-	hud.phone_off.connect(enable_buttons)
+	#hud.phone_on.connect(disable_buttons)
+	#hud.phone_off.connect(enable_buttons)
 	await get_tree().create_timer(0.1).timeout
 	if data.dayNumber == 0: # these actions are unavailable on day 0
 		isFirstDay = true
@@ -34,8 +34,8 @@ func _ready() -> void:
 
 
 func first_day_ended():
-	get_tree().root.remove_child(hud)
-	hud.queue_free()
+	#get_tree().root.remove_child(hud)
+	#hud.queue_free()
 	movie = MoviePlayer.new()
 	var succ:bool = movie.set_args(get_tree(),"res://Home.tscn","res://assets/videos/logos/qcdev.ogv")
 	if !succ:
@@ -71,9 +71,9 @@ func _on_leave_button_pressed() -> void:
 	pass # Replace with function body.
 	
 func leave(new_scene_name : String):
-	if hud:
-		get_tree().root.remove_child(hud)
-		hud.queue_free()
+	#if hud:
+	#	get_tree().root.remove_child(hud)
+	#	hud.queue_free()
 	GlobalManager.load_scene(new_scene_name)
 	
 	
@@ -100,8 +100,8 @@ func enable_buttons():
 		$Panel/leaveButton.visible=false
 		$Panel/shopButton.disabled=true
 		$Panel/shopButton.visible=false
-		hud.phone_button.visible = false
-		hud.phone_button.disabled = true
+		#hud.phone_button.visible = false
+		#hud.phone_button.disabled = true
 
 func disable_buttons():
 	$Panel/drinkButton.disabled=true
